@@ -16,6 +16,13 @@
     };
     nixpkgs.url = "https://channels.nixos.org/nixpkgs-unstable/nixexprs.tar.xz";
     nixpkgs-lib.follows = "nixpkgs";
+    noctalia = {
+      url = "github:noctalia-dev/noctalia-shell";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        noctalia-qs.follows = "noctalia-qs";
+      };
+    };
     vicinae = {
       url = "github:vicinaehq/vicinae";
       inputs.nixpkgs.follows = "nixpkgs";

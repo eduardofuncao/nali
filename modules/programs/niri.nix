@@ -7,6 +7,7 @@
 
       grim slurp swappy
       wf-recorder
+      brightnessctl
 
       adw-gtk3
       gnome-themes-extra

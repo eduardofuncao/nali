@@ -11,7 +11,10 @@
     hardware.bluetooth.enable = true;
 
     environment.systemPackages = with pkgs; [
-      mpv zathura imv
+      pavucontrols
+      # alsa-utils
+      # wireplumber
+      blueman
     ];
 
   };

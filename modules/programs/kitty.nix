@@ -1,9 +1,9 @@
 {
   flake.nixosModules.kitty = { pkgs, lib, ... }: {
 
-    programs.kitty = {
-      enable = true;
-    };
+    environment.systemPackages = with pkgs; [
+      kitty
+    ];
 
   };
 }

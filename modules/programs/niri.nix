@@ -38,5 +38,11 @@
       NIXOS_OZONE_WL = "1";
     };
 
+    hjem.users.eduardo = {
+      files = {
+        ".config/niri/config.kdl".source = ./niri-config.kdl;
+      };
+    };
+
   };
 }

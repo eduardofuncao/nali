@@ -7,5 +7,12 @@
       baseIndex = 1;
     };
 
+
+    hjem.users.eduardo = {
+      files = {
+        ".config/tmux/tmux.conf".source = ./tmux.conf;
+      };
+    };
+
   };
 }

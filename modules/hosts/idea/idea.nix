@@ -3,9 +3,11 @@
 
     modules = with self.nixosModules; [
       idea
+      hjem
 
       # services
-      audio graphics kanata greetd
+      audio graphics kanata
+      # greetd
       docker
       vicinae
 

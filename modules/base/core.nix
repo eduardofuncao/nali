@@ -14,13 +14,24 @@
     console.keyMap = "br-abnt2";
 
     users.defaultUserShell = pkgs.fish;
-    programs.fish.enable = true;
+
+
+    programs.fish = {
+      enable = true;
+    };
 
     users.users.eduardo = {
       isNormalUser = true;
       initialPassword = "test";
       description = "Eduardo";
       extraGroups = [ "wheel" "networkmanager" ];
+    };
+
+    hjem.users = {
+      eduardo = {
+        user = "eduardo";
+        directory = "/home/eduardo";
+      };
     };
 
     environment.systemPackages = with pkgs; [

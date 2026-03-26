@@ -2,11 +2,16 @@
   flake.nixosConfigurations.idea = inputs.nixpkgs.lib.nixosSystem {
 
     modules = with self.nixosModules; [
-      core
       idea
-      desktop
+
+      # services
+      audio graphics docker kanata greetd
+
+      # packages
+      core
       cli
-      hyprland
+      viewers
+      # hyprland
       # kitty
       niri
       noctalia

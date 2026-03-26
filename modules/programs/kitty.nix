@@ -1,4 +1,9 @@
 {
-  flake.nixosModules.kitty = { pkgs, ... }: {
+  flake.nixosModules.kitty = { pkgs, lib, ... }: {
+
+    programs.kitty = {
+      enable = true;
+    };
+
   };
 }

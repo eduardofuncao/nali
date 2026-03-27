@@ -18,7 +18,10 @@
         Restart = "always";
         RestartSec = "5";
         KillMode = "process";
-        Environment = "USE_LAYER_SHELL=1";
+        Environment = [
+          "USE_LAYER_SHELL=1"
+          "PATH=/run/current-system/sw/bin:${pkgs.coreutils}/bin:${pkgs.findutils}/bin"
+        ];
       };
     };
 

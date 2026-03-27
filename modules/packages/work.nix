@@ -17,6 +17,7 @@
       bruno
 
       web-agent
+      httptoolkit
       (androidenv.emulateApp {
         name = "emulate-android";
         platformVersion = "35";
@@ -44,6 +45,9 @@
       else
         set -gx LD_LIBRARY_PATH "${pkgs.oracle-instantclient.lib}/lib"
       end
+
+      # Electron/Wayland
+      set -gx ELECTRON_OZONE_PLATFORM_HINT auto
     '';
 
     environment.etc."xdg/applications/web-agent.desktop".text = ''

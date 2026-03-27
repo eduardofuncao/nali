@@ -9,6 +9,7 @@
       nodejs
       nodePackages.npm
       go
+      cargo rustc
       delve
       python3
       openjdk
@@ -19,6 +20,7 @@
       nixpkgs-fmt
       lua-language-server
       oracle-instantclient
+      claude-code
     ];
 
   };

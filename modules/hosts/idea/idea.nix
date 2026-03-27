@@ -4,10 +4,11 @@
     modules = with self.nixosModules; [
       idea
       hjem
+      stylix
 
       # services
       audio graphics kanata
-      # greetd
+      greetd
       docker
       vicinae
 
@@ -17,7 +18,6 @@
       viewers
       niri
       noctalia
-      # hyprland
 
       kitty
       tmux

@@ -3,9 +3,17 @@
 
     environment.systemPackages = with pkgs; [
       jq ripgrep fd btop fzf gh
-      zip unzip bat
-    qemu
+      zip unzip bat dig tldr fastfetch ncdu
+      qemu
     ];
+
+
+
+
+
+
+
+
 
     programs.neovim.enable = true;
     programs.yazi.enable = true;

@@ -14,6 +14,7 @@
       teams-for-linux
       putty
       steam-run
+      bruno
 
       web-agent
       (androidenv.emulateApp {

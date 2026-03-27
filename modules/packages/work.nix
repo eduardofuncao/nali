@@ -1,13 +1,10 @@
 # TODO make web-agent.nix work
 
 { inputs, ... }:
-let
-  web-agent-pkg = { pkgs }: pkgs.callPackage ./web-agent.nix {};
-in
 {
   flake.nixosModules.work = { pkgs, lib, ... }:
   let
-    web-agent = web-agent-pkg { inherit pkgs; };
+    web-agent = pkgs.callPackage ../../vendor/web-agent.nix {};
   in {
     environment.systemPackages = with pkgs; [
       dbeaver-bin

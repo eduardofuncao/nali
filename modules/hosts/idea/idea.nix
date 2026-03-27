@@ -27,7 +27,7 @@
       editing
       programming
       # gaming
-      # work
+      work
     ];
   };
 

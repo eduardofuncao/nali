@@ -78,7 +78,7 @@ input {
 // Remember to uncomment the node by removing "/-"!
 output "eDP-1" {
     // Uncomment this line to disable this output.
-    // off
+    off
 
     // Resolution and, optionally, refresh rate of the output.
     // The format is "<width>x<height>" or "<width>x<height>@<refresh rate>".
@@ -319,6 +319,18 @@ animations {
 
     // Slow down all animations by this factor. Values below 1 speed them up instead.
     // slowdown 3.0
+
+    window-open {
+        spring damping-ratio=0.45 stiffness=750 epsilon=0.0003
+    }
+
+    window-movement {
+        spring damping-ratio=0.45 stiffness=750 epsilon=0.0003
+    }
+
+    window-resize {
+        spring damping-ratio=0.45 stiffness=750 epsilon=0.0003
+    }
 }
 
 // Window rules let you adjust behavior for individual windows.

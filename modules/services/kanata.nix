@@ -25,9 +25,8 @@
     hjem.users.eduardo = {
       files = {
         ".config/kanata/config.kbd".text = ''
-          ;; Kanata configuration for swapping Esc and CapsLock
-          ;; CapsLock: Esc on tap, Ctrl on hold
-          ;; Esc: CapsLock
+          ;; Kanata configuration
+          ;; Swap Esc and CapsLock
 
           (defcfg
             process-unmapped-keys yes
@@ -38,7 +37,7 @@
           )
 
           (deflayer base
-            (tap-hold 200 200 esc lctl) caps
+            esc caps
           )
         '';
       };

@@ -62,7 +62,7 @@ vim.g.clipboard = {
     ['+'] = 'wl-paste --no-newline',
     ['*'] = 'wl-paste --no-newline',
   },
-  cache_enabled = 0,
+  cache_enabled = 1,
 }
 
 -------------
@@ -137,10 +137,11 @@ vim.pack.add({
   { src = "https://github.com/folke/snacks.nvim" },
   { src = "https://github.com/HakonHarnes/img-clip.nvim" },
 
-  { src = "https://github.com/yetone/avante.nvim" },
-  { src = "https://github.com/nvim-lua/plenary.nvim" },
-  { src = "https://github.com/MunifTanjim/nui.nvim" },
+  -- { src = "https://github.com/yetone/avante.nvim" },
+  -- { src = "https://github.com/nvim-lua/plenary.nvim" },
+  -- { src = "https://github.com/MunifTanjim/nui.nvim" },
 
+  -- { src = "https://github.com/github/copilot.vim" },
   -- { src = "https://github.com/zbirenbaum/copilot.lua" },
   -- { src = "https://github.com/copilotlsp-nvim/copilot-lsp" },
 
@@ -148,13 +149,12 @@ vim.pack.add({
   { src = "https://github.com/NeogitOrg/neogit" },
   { src = "https://github.com/sindrets/diffview.nvim" },
 
-  { src = "https://github.com/github/copilot.vim" },
   { src = "https://github.com/karb94/neoscroll.nvim" },
 
   { src = 'https://github.com/jinh0/eyeliner.nvim' },
   { src = 'https://codeberg.org/andyg/leap.nvim' },
 
-  { src = 'https://github.com/S1M0N38/love2d.nvim' },
+  -- { src = 'https://github.com/S1M0N38/love2d.nvim' },
 })
 
 -------------------

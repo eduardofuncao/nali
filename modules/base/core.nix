@@ -42,7 +42,7 @@
       isNormalUser = true;
       initialPassword = "test";
       description = "Eduardo";
-      extraGroups = [ "wheel" "networkmanager" ];
+      extraGroups = [ "wheel" "networkmanager" "docker"];
     };
 
     hjem.users = {

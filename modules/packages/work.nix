@@ -1,11 +1,8 @@
-# TODO make web-agent.nix work
-
 { inputs, ... }:
 {
   flake.nixosModules.work = { pkgs, lib, ... }:
-  let
-    web-agent = pkgs.callPackage ../../vendor/web-agent.nix {};
-  in {
+  {
+    imports = [ inputs.self.nixosModules.web-agent ];
     environment.systemPackages = with pkgs; [
       dbeaver-bin
       openfortivpn
@@ -16,7 +13,6 @@
       steam-run
       bruno
 
-      web-agent
       httptoolkit
       (androidenv.emulateApp {
         name = "emulate-android";
@@ -48,16 +44,6 @@
 
       # Electron/Wayland
       set -gx ELECTRON_OZONE_PLATFORM_HINT auto
-    '';
-
-    environment.etc."xdg/applications/web-agent.desktop".text = ''
-      [Desktop Entry]
-      Name=Web Agent
-      Exec=${web-agent}/bin/web-agent
-      Icon=${web-agent}/usr/share/icons/hicolor/256x256/apps/web-agent.png
-      Comment=Web Agent application
-      Categories=Application;
-      Type=Application
     '';
   };
 }

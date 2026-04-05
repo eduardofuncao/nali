@@ -1,8 +1,13 @@
 { inputs, self, ... }: {
   flake.nixosConfigurations.idea = inputs.nixpkgs.lib.nixosSystem {
-
     modules = with self.nixosModules; [
       idea
+    ];
+  };
+
+
+  flake.nixosModules.idea = {pkgs, ...}: {
+    imports = with self.nixosModules; [
       hjem
       stylix
 
@@ -15,26 +20,20 @@
       # packages
       core
       cli
-      squix
-      viewers
       niri
       noctalia
 
       kitty
       tmux
       neovim
+      squix
+      viewers
       zen
 
       editing
       programming
       # gaming
       work
-    ];
-  };
-
-
-  flake.nixosModules.idea = {pkgs, ...}: {
-    environment.systemPackages = with pkgs; [
     ];
 
   };

@@ -8,13 +8,6 @@
     ];
 
 
-
-
-
-
-
-
-
     programs.neovim.enable = true;
     programs.yazi.enable = true;
     programs.nh.enable = true;
@@ -24,8 +17,8 @@
     programs.git = {
       enable = true;
       config = {
-        user.name = "Your Name";
-        user.email = "you@example.com";
+        user.name = "Eduardo Função";
+        user.email = "eduardofuncao@hotmail.com";
         init.defaultBranch = "main";
         core.editor = "nvim";
         pull.rebase = true;

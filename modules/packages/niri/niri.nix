@@ -4,6 +4,7 @@
     environment.systemPackages = with pkgs; [
       wl-clipboard wtype
       xdg-desktop-portal-gtk xdg-desktop-portal-gnome
+      xwayland-satellite
 
       grim slurp swappy
       wf-recorder
@@ -19,7 +20,6 @@
     programs.niri.enable = true;
     security.polkit.enable = true;
     services.gnome.gnome-keyring.enable = true;
-    security.pam.services.swaylock = { };
 
     xdg.portal.config = {
       common = {
@@ -29,12 +29,6 @@
         ];
       };
     };
-
-    fonts.packages = with pkgs; [
-      nerd-fonts.jetbrains-mono
-      maple-mono.truetype
-      lato
-    ];
 
     environment.sessionVariables = {
       NIXOS_OZONE_WL = "1";

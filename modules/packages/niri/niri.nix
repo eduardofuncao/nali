@@ -13,8 +13,6 @@
       adw-gtk3
       gnome-themes-extra
       papirus-icon-theme
-      # papirus-folders
-      # arc-theme
     ];
 
     programs.niri.enable = true;

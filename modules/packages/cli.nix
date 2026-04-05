@@ -7,7 +7,6 @@
       qemu
     ];
 
-
     programs.neovim.enable = true;
     programs.yazi.enable = true;
     programs.nh.enable = true;

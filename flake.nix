@@ -13,6 +13,10 @@
       url = "github:hercules-ci/flake-parts";
       inputs.nixpkgs-lib.follows = "nixpkgs-lib";
     };
+    helium = {
+      url = "github:AlvaroParker/helium-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     hjem = {
       url = "github:feel-co/hjem";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -41,10 +45,6 @@
     };
     stylix = {
       url = "github:nix-community/stylix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    vicinae = {
-      url = "github:vicinaehq/vicinae";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     zen-browser = {

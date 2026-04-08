@@ -1,9 +1,13 @@
 {inputs, ...}: {
-  flake-file.inputs.vicinae = {
-    url = "github:vicinaehq/vicinae";
-    inputs.nixpkgs.follows = "nixpkgs";
-  };
+  # flake-file.inputs.vicinae = {
+  #   url = "github:vicinaehq/vicinae";
+  #   inputs.nixpkgs.follows = "nixpkgs";
+  # };
   flake.nixosModules.vicinae = { pkgs, ...}: {
+
+    environment.systemPackages = with pkgs; [
+      vicinae
+    ];
 
     systemd.user.services.vicinae = {
       description = "Vicinae server daemon";
@@ -14,7 +18,8 @@
       wantedBy = [ "graphical-session.target" ];
       serviceConfig = {
         Type = "simple";
-        ExecStart = "${inputs.vicinae.packages.${pkgs.stdenv.hostPlatform.system}.default}/bin/vicinae server";
+        # ExecStart = "${inputs.vicinae.packages.${pkgs.stdenv.hostPlatform.system}.default}/bin/vicinae server";
+        ExecStart = "vicinae server";
         Restart = "always";
         RestartSec = "5";
         KillMode = "process";

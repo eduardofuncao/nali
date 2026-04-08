@@ -18,7 +18,7 @@
       nil
       nixpkgs-fmt
       lua-language-server
-      oracle-instantclient
+      # oracle-instantclient
       claude-code
     ];
 

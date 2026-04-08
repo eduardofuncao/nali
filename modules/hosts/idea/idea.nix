@@ -28,7 +28,7 @@
       neovim
       squix
       viewers
-      zen
+      zen helium
 
       editing
       programming

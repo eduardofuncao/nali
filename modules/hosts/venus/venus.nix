@@ -8,8 +8,8 @@
 
   flake.nixosModules.venus = { pkgs, ... }: {
     imports = with self.nixosModules; [
-      hjem
-      core
+      # hjem
+      # core
       cli
       docker
       ssh

@@ -12,6 +12,6 @@
     };
 
     # TODO: add SSH public key
-    users.users.eduardo.openssh.authorizedKeys.keys = [ ];
+    # users.users.eduardo.openssh.authorizedKeys.keys = [ ];
   };
 }

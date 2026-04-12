@@ -8,13 +8,14 @@
 
   flake.nixosModules.venus = { pkgs, ... }: {
     imports = with self.nixosModules; [
-      # hjem
-      # core
+      hjem
+      core
       cli
       docker
       ssh
       caddy
       postgresql
+      squix
     ];
 
     networking.networkmanager.enable = lib.mkForce false;
@@ -23,10 +24,13 @@
     virtualisation.vmVariant = {
       imports = with self.nixosModules; [ core-vm ];
 
-      virtualisation.memorySize = 2048;
+      programs.starship.enable = true;
+
+      virtualisation.memorySize = 6144;
       virtualisation.diskSize = 10240;
       virtualisation.cores = 2;
-      virtualisation.graphics = false;
+      virtualisation.graphics = true;
+      console.font = "latarcyrheb-sun32";
       virtualisation.forwardPorts = [
         { from = "host"; host.port = 2222; guest.port = 22; }
         { from = "host"; host.port = 8080; guest.port = 80; }

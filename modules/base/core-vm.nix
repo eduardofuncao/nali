@@ -1,5 +1,20 @@
 {
-  flake.nixosModules.core-vm = {
+  flake.nixosModules.core-vm = { pkgs, ... }: {
+    nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+    users.defaultUserShell = pkgs.fish;
+    programs.fish.enable = true;
+
+    environment.variables.EDITOR = "vim";
+
+    environment.systemPackages = with pkgs; [
+      # neovim
+      vim
+      # git
+      curl
+      wget
+    ];
+
     users.groups.vm = { };
     users.users.vm = {
       isNormalUser = true;

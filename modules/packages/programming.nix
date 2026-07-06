@@ -20,7 +20,7 @@
       nixpkgs-fmt
       lua-language-server
       # oracle-instantclient
-      claude-code
+      claude-code fabric-ai
     ];
 
   };

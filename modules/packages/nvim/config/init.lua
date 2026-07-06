@@ -118,6 +118,7 @@ vim.pack.add({
   { src = "https://github.com/neovim/nvim-lspconfig" },
   { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
   { src = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects" },
+  { src = 'https://github.com/saghen/blink.lib' },
   { src = 'https://github.com/saghen/blink.cmp' },
   { src = 'https://github.com/rafamadriz/friendly-snippets' },
   { src = "https://github.com/L3MON4D3/LuaSnip" },
@@ -138,7 +139,7 @@ vim.pack.add({
   { src = "https://github.com/HakonHarnes/img-clip.nvim" },
 
   -- { src = "https://github.com/yetone/avante.nvim" },
-  -- { src = "https://github.com/nvim-lua/plenary.nvim" },
+  { src = "https://github.com/nvim-lua/plenary.nvim" },
   -- { src = "https://github.com/MunifTanjim/nui.nvim" },
 
   -- { src = "https://github.com/github/copilot.vim" },
@@ -161,6 +162,7 @@ vim.pack.add({
 -- plugins setup --
 -------------------
 require("plugins")
+-- require("squix")
 
 ----------------
 -- treesitter --

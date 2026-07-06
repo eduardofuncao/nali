@@ -1,0 +1,158 @@
+[bar.default]
+background_opacity = 0.0
+center = [ "workspaces", "media" ]
+end = [ "cpu", "ram", "network", "volume", "clipboard", "notifications", "battery", "spacer_2", "date", "clock" ]
+margin_edge = 0
+margin_ends = 10
+padding = 10
+radius = 20
+shadow = false
+start = [ "control-center" ]
+thickness = 24
+widget_spacing = 4
+
+[desktop_widgets]
+enabled = false
+schema_version = 2
+widget_order = []
+
+    [desktop_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [desktop_widgets.widget]
+
+[dock]
+auto_hide = true
+enabled = true
+icon_size = 32
+reserve_space = false
+
+[idle]
+pre_action_fade_seconds = 10
+
+[location]
+address = "São Paulo"
+
+[lockscreen_widgets]
+enabled = false
+schema_version = 2
+widget_order = [ "lockscreen-login-box@eDP-1" ]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
+    box_height = 70.0
+    box_width = 400.0
+    cx = 683.0
+    cy = 649.0
+    output = "eDP-1"
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        input_opacity = 1.0
+        input_radius = 6.0
+        show_login_button = true
+
+[nightlight]
+enabled = true
+
+[plugins]
+enabled = []
+
+[shell]
+ui_scale = 0.90000000000000002
+
+    [shell.panel]
+    borders = false
+    floating_offset = 0
+    open_near_click_control_center = true
+    session_placement = "centered"
+    shadow = false
+    transparency_mode = "glass"
+
+[theme]
+builtin = "Noctalia"
+mode = "auto"
+source = "wallpaper"
+wallpaper_scheme = "m3-content"
+
+    [theme.templates]
+    enable_builtin_templates = false
+
+[wallpaper]
+directory = "~/.config/wallpapers"
+
+    [wallpaper.default]
+    path = "/home/eduardo/.config/wallpapers/bg.jpg"
+
+    [wallpaper.last]
+    path = "/home/eduardo/.config/wallpapers/bg.jpg"
+
+    [wallpaper.monitors.eDP-1]
+    path = "/home/eduardo/.config/wallpapers/bg.jpg"
+
+    [[wallpaper.favorite]]
+    path = "/home/eduardo/.config/wallpapers/bg.jpg"
+    theme_mode = "auto"
+
+[widget.battery]
+hide_when_full = true
+show_label = false
+
+[widget.brightness]
+show_label = false
+
+[widget.cat]
+type = "noctalia/bongocat:cat"
+
+[widget.clock]
+scale = 0.84999999999999998
+
+[widget.control-center]
+glyph = "snowflake"
+
+[widget.cpu]
+show_label = false
+
+[widget.custom_button_2]
+type = "custom_button"
+
+[widget.date]
+scale = 0.84999999999999998
+
+[widget.media]
+hide_when_no_media = true
+
+[widget.network]
+show_label = false
+
+[widget.ram]
+show_label = false
+
+[widget.spacer_2]
+length = 10
+type = "spacer"
+
+[widget.temp]
+show_label = false
+
+[widget.volume]
+show_label = false
+
+[widget.weather]
+show_condition = false
+
+[widget.workspaces]
+active_pill_size = 2.0
+display = "none"
+hide_when_empty = true
+pill_scale = 0.90000000000000002

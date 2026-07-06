@@ -12,14 +12,16 @@
       stylix
 
       # services
-      audio graphics #kanata
-      neru
+      audio graphics kanata
+      udev
+      # neru
       greetd
       docker
       vicinae
 
       # packages
       core
+      swap
       cli
       fish
       niri
@@ -34,7 +36,7 @@
 
       editing
       programming
-      # gaming
+      gaming
       work
     ];
 

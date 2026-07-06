@@ -1,62 +1,51 @@
 {
   flake.nixosModules.gaming = { pkgs, ... }: {
-    # Enable gaming-related services and configurations
-    programs.gamemode.enable = true;
+    programs.gamemode = {
+      enable = true;
+      enableRenice = true;
+      settings = {
+        general = {
+          renice = 10;
+          ioprio = "high";
+        };
+        gpu = {
+          apply_gpu_optimisations = 0; # Intel iGPU doesn't support this
+        };
+      };
+    };
+
     programs.steam = {
       enable = true;
       remotePlay.openFirewall = true;
       dedicatedServer.openFirewall = true;
+      protontricks.enable = true;
+      extraCompatPackages = [ pkgs.proton-ge-bin ];
     };
 
-    # Intel GPU configuration for ThinkPad T480
-    services.xserver.videoDrivers = [ "modesetting" ];
-    
-    # Intel graphics hardware acceleration
-    hardware.graphics = {
-      enable = true;
-      extraPackages = with pkgs; [
-        intel-media-driver # VAAPI driver for modern Intel GPUs
-        vaapiIntel         # Legacy VAAPI driver
-        vaapiVdpau
-        libvdpau-va-gl
-      ];
-    };
+    hardware.steam-hardware.enable = true;
 
-    # Gaming packages
+    hardware.graphics.extraPackages = with pkgs; [
+      dxvk
+      vkd3d-proton
+    ];
+
     environment.systemPackages = with pkgs; [
-      lutris
-      heroic
       mangohud
-      gamemode
-      discord
-      # Additional tools for Intel graphics
-      intel-gpu-tools
-      mesa-demos
+      gamescope
+      hydralauncher
     ];
 
-    # Performance optimizations for laptop
-    powerManagement.cpuFreqGovernor = "performance";
-    
-    # Kernel parameters optimized for ThinkPad T480
     boot.kernelParams = [
-      "i915.enable_guc=2"  # Enable GuC submission for Intel graphics
-      "i915.enable_fbc=1"  # Enable framebuffer compression
+      "i915.enable_guc=2"
+      "i915.enable_fbc=1"
+      "i915.enable_dc=0"
+      "i915.enable_psr=0"
+      "split_lock_detect=off"
+      "transparent_hugepage=madvise"
     ];
 
-    # Enable TLP for better battery management when gaming unplugged
-    services.tlp = {
-      enable = true;
-      settings = {
-        # Performance mode when on AC power
-        CPU_SCALING_GOVERNOR_ON_AC = "performance";
-        CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
-        # GPU performance settings
-        RUNTIME_PM_ON_AC = "on";
-        RUNTIME_PM_ON_BAT = "auto";
-      };
-    };
+    boot.kernel.sysctl."vm.max_map_count" = 2147483642;
 
-    # Thermal management for sustained performance
     services.thermald.enable = true;
   };
 }

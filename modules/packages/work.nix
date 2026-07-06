@@ -17,21 +17,17 @@
 
       httptoolkit
       scrcpy
-      (androidenv.emulateApp {
-        name = "emulate-android";
-        platformVersion = "35";
-        abiVersion = "x86_64";
-        systemImageType = "google_apis";
-      })
+      (let sdk = androidenv.composeAndroidPackages {
+        platformVersions = [ "35" ];
+        systemImageTypes = [ "google_apis" ];
+        abiVersions = [ "x86_64" ];
+      }; in sdk.androidsdk)
 
     ];
 
     virtualisation.waydroid.enable = true;
     networking.nftables.enable = true;
 
-    environment.shellAliases = {
-      emulator = ''LIBGL_DRI3_DISABLE=1 NIX_ANDROID_EMULATOR_FLAGS="-gpu host -accel on -no-snapshot -memory 4096 -cores 4 -no-metrics" steam-run run-test-emulator'';
-    };
 
     nixpkgs.config.android_sdk.accept_license = true;
 

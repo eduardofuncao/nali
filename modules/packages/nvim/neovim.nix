@@ -20,7 +20,7 @@
         ".config/nvim/lua/oil_config.lua".source = ./config/lua/oil_config.lua;
         ".config/nvim/lua/lsp.lua".source = ./config/lua/lsp.lua;
         ".config/nvim/lua/image.lua".source = ./config/lua/image.lua;
-        ".config/nvim/lua/squix.lua".source = ./config/lua/squix.lua;
+        # ".config/nvim/lua/squix.lua".source = ./config/lua/squix.lua;
         ".config/nvim/syntax/advpl.vim".source = ./config/syntax/advpl.vim;
         ".config/nvim/nvim-pack-lock.json".source = ./config/nvim-pack-lock.json;
       };

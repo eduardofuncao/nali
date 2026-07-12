@@ -5,6 +5,8 @@
       jq ripgrep fd btop fzf gh
       zip unzip bat dig tldr fastfetch ncdu
       qemu
+      aerc
+      w3m
     ];
 
 

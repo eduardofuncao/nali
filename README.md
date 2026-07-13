@@ -50,4 +50,4 @@ To source config files from other programs using nix, we use hjem. For example, 
 }
 ```
 
-> made with `olin` by eduardofuncao
+> eduardofuncao li pali e ni kepeken olin

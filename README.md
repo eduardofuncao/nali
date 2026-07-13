@@ -68,4 +68,4 @@ system:
 }
 ```
 
-> made with `olin` by eduardofuncao
+> eduardofuncao li pali e ni kepeken olin

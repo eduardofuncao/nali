@@ -6,6 +6,7 @@
       imv
       aerc
 
+      super-productivity
       yt-dlp
       spotify-player
 

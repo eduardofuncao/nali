@@ -28,8 +28,8 @@
         name = "Poppins";
       };
       monospace = {
-        package = pkgs.maple-mono.truetype;
-        name = "Maple Mono";
+        package = pkgs.maple-mono.NF;
+        name = "Maple Mono NF";
       };
       emoji = {
         package = pkgs.noto-fonts-color-emoji;

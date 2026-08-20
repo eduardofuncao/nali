@@ -9,6 +9,7 @@
       kulala-core
       jujutsu
       nchat
+      websocat
     ];
 
 

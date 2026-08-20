@@ -1,7 +1,7 @@
 function emulator
   mkdir -p ~/.android/avd
 
-  set -l sdk (dirname (dirname (readlink -f (which sdkmanager))))/libexec/android-sdk
+  set -l sdk (dirname (dirname (dirname (dirname (readlink -f (which sdkmanager))))))
   if not test -d $sdk/emulator
     echo "ERROR: Android SDK not found. Rebuild first."
     return 1

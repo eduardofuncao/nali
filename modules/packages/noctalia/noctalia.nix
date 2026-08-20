@@ -3,7 +3,7 @@
   flake-file.inputs ={
     noctalia = {
       url = "github:noctalia-dev/noctalia";
-      inputs.nixpkgs.follows = "nixpkgs";
+      # inputs.nixpkgs.follows = "nixpkgs";
     };
   };
   flake.nixosModules.noctalia = {pkgs, lib, ...}: {

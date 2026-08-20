@@ -1,6 +1,8 @@
-----------------
--- treesitter --
-----------------
+vim.pack.add({
+  "https://github.com/nvim-treesitter/nvim-treesitter",
+  "https://github.com/nvim-treesitter/nvim-treesitter-textobjects"
+})
+
 require("nvim-treesitter").install({
   "c",
   "lua",
@@ -54,11 +56,3 @@ vim.keymap.set("n", "[F", function() move.goto_previous_end("@function.outer") e
 vim.keymap.set("n", "[C", function() move.goto_previous_end("@class.outer") end)
 vim.keymap.set("n", "[A", function() move.goto_previous_end("@parameter.inner") end)
 vim.keymap.set("n", "[K", function() move.goto_previous_end("@block.outer") end)
-
-vim.filetype.add({
-  extension = {
-    prw = "advpl",
-    prg = "advpl",
-    ch = "c",
-  },
-})

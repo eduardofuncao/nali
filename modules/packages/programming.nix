@@ -5,18 +5,26 @@
       gcc arrow-cpp cmake
       gnumake
       nodejs
-      typescript
+      typescript-go
       go delve
+      gopls golangci-lint
       cargo rustc
       # python3
-      pyright
+      basedpyright ruff
       openjdk
-      gopls golangci-lint
       lua-language-server
       nil nixpkgs-fmt
-      # oracle-instantclient
-      claude-code fabric-ai opencode
+      yaml-language-server vscode-json-languageserver
+      bash-language-server
+      sqls
+      oracle-instantclient
+      claude-code fabric-ai opencode antigravity-cli
     ];
+
+    environment.sessionVariables = {
+      ORACLE_HOME = "${pkgs.oracle-instantclient.lib}";
+      LD_LIBRARY_PATH = [ "${pkgs.oracle-instantclient.lib}/lib" ];
+    };
 
   };
 }

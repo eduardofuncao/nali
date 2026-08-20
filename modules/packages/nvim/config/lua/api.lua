@@ -1,3 +1,8 @@
+vim.pack.add({
+  "https://github.com/mistweaverco/kulala.nvim",
+  "https://github.com/MeanderingProgrammer/render-markdown.nvim"
+})
+
 require("kulala").setup({
   global_keymaps = true,
   global_keymaps_prefix = "<leader>r",
@@ -30,26 +35,10 @@ Backend.is_up_to_date = function()
   return Bridge.executable_path() ~= nil
 end
 
-require("ufo").setup({
-  provider_selector = function(_, filetype, _)
-    if filetype == "kulala_ui" then
-      return { "lsp", "indent" }
-    end
-    return ""
-  end,
-})
-
--- global, harmless display settings
-vim.o.foldcolumn = "auto:3"
 vim.o.foldlevel = 99
 vim.o.foldlevelstart = 99
 vim.o.foldenable = true
-vim.opt.fillchars = {
-  foldopen = "▸",
-  foldclose = "▾",
-  foldsep = " ",
-}
 
-vim.keymap.set("n", "zR", require("ufo").openAllFolds)
-vim.keymap.set("n", "zM", require("ufo").closeAllFolds)
-
+require('render-markdown').setup({
+    file_types = { 'markdown', 'kulala_ui' },
+})

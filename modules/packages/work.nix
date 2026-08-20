@@ -7,6 +7,7 @@
       systemImageTypes = [ "google_apis" ];
       abiVersions = [ "x86_64" ];
       includeEmulator = true;
+      includeSystemImages = true;
     };
   in {
     imports = [ inputs.self.nixosModules.web-agent ];

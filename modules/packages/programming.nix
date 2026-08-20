@@ -2,25 +2,20 @@
   flake.nixosModules.programming = { pkgs, ... }: {
 
     environment.systemPackages = with pkgs; [
-      gcc
-      arrow-cpp
+      gcc arrow-cpp cmake
       gnumake
-      cmake
       nodejs
-      go
+      typescript
+      go delve
       cargo rustc
-      delve
-      python3
-      openjdk
-      gopls
-      golangci-lint
-      lua-language-server
+      # python3
       pyright
-      nil
-      nixpkgs-fmt
+      openjdk
+      gopls golangci-lint
       lua-language-server
+      nil nixpkgs-fmt
       # oracle-instantclient
-      claude-code fabric-ai
+      claude-code fabric-ai opencode
     ];
 
   };

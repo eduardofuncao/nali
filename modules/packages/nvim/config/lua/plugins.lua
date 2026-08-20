@@ -9,6 +9,15 @@ vim.keymap.set("n", "<leader>fh", ":Pick help<CR>", { desc = "Search help fils" 
 vim.keymap.set("n", "<leader>fb", ":Pick buffers<CR>", { desc = "Search buffers" })
 
 require("mini.files").setup()
+vim.keymap.set("n", "<leader>E", ":lua MiniFiles.open()<CR>", { desc = "Open filebexplorer" })
+vim.keymap.set("n", "<leader>e", function ()
+  local MiniFiles = require("mini.files")
+  local _ = MiniFiles.close()
+    or MiniFiles.open(vim.api.nvim_buf_get_name(0), false)
+  vim.schedule(function()
+    MiniFiles.reveal_cwd()
+  end, 30)
+end, { desc = "Open filebexplorer" })
 -- require("mini.pairs").setup()
 
 require("mini.surround").setup()
@@ -17,6 +26,31 @@ require("eyeliner").setup({
   highlight_on_key = true,
   dim = true,
 })
+
+
+require('render-markdown').setup({
+    file_types = { 'markdown', 'kulala_ui' },
+})
+
+require("squix").setup({
+      hide_query = true,
+      term_keymaps = true,
+      window = {
+        position = "botright",
+        split_ratio = 0.4,
+        auto_focus = true,
+        float = { width = "80%", height = "80%", row = "center", col = "center", relative = "editor", border = "rounded" },
+      },
+      keymaps = {
+        run             = "<leader>sr",
+        run_named_query = "<leader>sn",
+        add             = "<leader>sa",
+        switch          = "<leader>ss",
+        init            = false,
+        status          = "<leader>st",
+        tables          = false,
+      },
+    })
 
 -- require("love2d").setup({
 --   path_to_love_bin = "love",

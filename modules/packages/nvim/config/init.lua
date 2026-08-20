@@ -40,13 +40,13 @@ vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 
 vim.o.timeoutlen = 1000
 
-vim.g.netrw_banner = 0          -- hide the banner at the top
-vim.g.netrw_liststyle = 3       -- tree view (0=thin, 1=long, 2=wide, 3=tree)
-vim.g.netrw_browse_split = 4    -- open files in: 1=hsplit, 2=vsplit, 3=tab, 4=previous window
-vim.g.netrw_winsize = 25        -- width of the netrw window (in %)
-vim.g.netrw_altv = 1            -- split to the right with :Vex
-vim.g.netrw_preview = 1         -- preview window shown in a vertical split
-vim.g.netrw_keepdir = 0         -- keep current dir in sync with netrw dir
+vim.g.netrw_banner = 0       -- hide the banner at the top
+vim.g.netrw_liststyle = 3    -- tree view (0=thin, 1=long, 2=wide, 3=tree)
+vim.g.netrw_browse_split = 4 -- open files in: 1=hsplit, 2=vsplit, 3=tab, 4=previous window
+vim.g.netrw_winsize = 25     -- width of the netrw window (in %)
+vim.g.netrw_altv = 1         -- split to the right with :Vex
+vim.g.netrw_preview = 1      -- preview window shown in a vertical split
+vim.g.netrw_keepdir = 0      -- keep current dir in sync with netrw dir
 
 -- clipboard
 vim.opt.clipboard = 'unnamedplus'
@@ -80,7 +80,6 @@ vim.keymap.set({ "n", "v", "x" }, "<leader>tc", ":tabclose<CR>")
 vim.keymap.set({ "n", "v", "x" }, "<leader>ba", ":e #<CR>")
 vim.keymap.set({ "n", "v", "x" }, "<leader>sb", ":sf #<CR>")
 
-
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>") -- clear search highlights when pressing <esc>
 
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
@@ -98,13 +97,11 @@ vim.keymap.set("v", ">", ">gv", { desc = "Indent right and reselect" })
 
 vim.keymap.set("n", "grd", vim.lsp.buf.definition)
 
-vim.keymap.set("n", "<leader>e", ":lua MiniFiles.open()<CR>", { desc = "Open filebexplorer" })
-
 vim.keymap.set({ "n", "v", "x" }, "<leader>y", '"+y')
 vim.keymap.set({ "n", "v", "x" }, "<leader>p", '"+p')
 -- vim.keymap.set({ "n", "v", "x" }, "<leader>d", '"+d')
 
-vim.keymap.set({'n', 'x', 'o'}, 'ss', '<Plug>(leap)', { desc = 'Leap' })
+vim.keymap.set({ 'n', 'x', 'o' }, 'ss', '<Plug>(leap)', { desc = 'Leap' })
 vim.keymap.set('n', 'sS', '<Plug>(leap-from-window)', { desc = 'Leap (all windows)' })
 
 -------------
@@ -112,7 +109,10 @@ vim.keymap.set('n', 'sS', '<Plug>(leap-from-window)', { desc = 'Leap (all window
 -------------
 vim.pack.add({
   { src = "https://github.com/sainnhe/everforest" },
-  { src = "https://github.com/vague-theme/vague.nvim"},
+  { src = "https://github.com/vague-theme/vague.nvim" },
+  { src = "https://github.com/scottmckendry/cyberdream.nvim" },
+  { src = "https://github.com/slugbyte/lackluster.nvim" },
+
   { src = 'https://github.com/nvim-tree/nvim-web-devicons' },
   { src = "https://github.com/mason-org/mason.nvim" },
   { src = "https://github.com/neovim/nvim-lspconfig" },
@@ -128,15 +128,23 @@ vim.pack.add({
   { src = 'https://github.com/leoluz/nvim-dap-go' },
   { src = 'https://github.com/miroshQa/debugmaster.nvim' },
 
+  { src = "https://github.com/eduardofuncao/squix.nvim" },
+  { src = "https://github.com/mistweaverco/kulala.nvim" },
+
   { src = "https://github.com/echasnovski/mini.pick" },
   { src = "https://github.com/echasnovski/mini.files" },
   { src = "https://github.com/nvim-mini/mini.surround" },
   { src = "https://github.com/nvim-mini/mini.ai" },
-  { src = "https://github.com/stevearc/oil.nvim" },
+  -- { src = "https://github.com/stevearc/oil.nvim" },
   -- { src = "https://github.com/echasnovski/mini.pairs" },
 
   { src = "https://github.com/folke/snacks.nvim" },
   { src = "https://github.com/HakonHarnes/img-clip.nvim" },
+  -- { src = "https://github.com/OXY2DEV/markview.nvim" },
+  { src = "https://github.com/MeanderingProgrammer/render-markdown.nvim" },
+  { src = "https://github.com/kevinhwang91/nvim-ufo" },
+    { src = "https://github.com/luukvbaal/statuscol.nvim" },
+    { src = "https://github.com/kevinhwang91/promise-async" },
 
   -- { src = "https://github.com/yetone/avante.nvim" },
   { src = "https://github.com/nvim-lua/plenary.nvim" },
@@ -155,7 +163,6 @@ vim.pack.add({
   { src = 'https://github.com/jinh0/eyeliner.nvim' },
   { src = 'https://codeberg.org/andyg/leap.nvim' },
 
-  -- { src = 'https://github.com/S1M0N38/love2d.nvim' },
 })
 
 -------------------
@@ -182,19 +189,24 @@ require("git_config")
 ---------
 -- oil --
 ---------
-require("oil_config")
+-- require("oil_config")
 
 -----------
 -- debug --
 -----------
 require("debugconfig")
 
+----------------
+-- api_client --
+----------------
+require("api_client")
+
 ------------
 -- images --
 ------------
 require("image")
 
-require("todo")
+require("askai")
 -- require("squix")
 
 -- spellcheck
@@ -211,6 +223,15 @@ vim.g.everforest_transparent_background = 1
 
 require("vague").setup({
   transparent = true,
+})
+
+require("cyberdream").setup({
+  transparent = true,
+  italic_comments = true,
+})
+
+require("lackluster").setup({
+  tweak_background = { normal = "none" }
 })
 
 vim.cmd.colorscheme("vague")

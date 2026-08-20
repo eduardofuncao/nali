@@ -4,9 +4,11 @@
     environment.systemPackages = with pkgs; [
       jq ripgrep fd btop fzf gh
       zip unzip bat dig tldr fastfetch ncdu
-      qemu
-      aerc
-      w3m
+      bc
+      # qemu
+      kulala-core
+      jujutsu
+      nchat
     ];
 
 
@@ -24,6 +26,20 @@
         init.defaultBranch = "main";
         core.editor = "nvim";
         pull.rebase = true;
+      };
+    };
+
+
+    hjem.users.eduardo = {
+      files = {
+        ".config/jj/config.toml".text = ''
+          [user]
+          name = "Eduardo Função"
+          email = "eduardo@eduardofuncao.com"
+
+          [core]
+          editor = "nvim"
+        '';
       };
     };
 

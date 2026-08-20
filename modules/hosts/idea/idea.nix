@@ -14,7 +14,6 @@
       # services
       audio graphics kanata
       udev
-      # neru
       greetd
       docker
       vicinae
@@ -32,11 +31,11 @@
       neovim
       squix
       viewers
-      zen helium #affinity
+      zen helium
 
       editing
-      programming
-      gaming
+      programming python
+      # gaming
       work
     ];
 

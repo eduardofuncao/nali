@@ -9,6 +9,8 @@
     stylix.enable = true;
     stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/black-metal.yaml";
     stylix.polarity = "dark";
+    # stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/mexico-light.yaml";
+    # stylix.polarity = "light";
 
     stylix.cursor = {
       package = pkgs.volantes-cursors;

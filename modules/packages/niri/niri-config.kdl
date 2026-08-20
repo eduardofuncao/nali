@@ -445,12 +445,16 @@ binds {
     Mod+y { spawn-sh "~/.local/bin/kipr yank"; }
     Mod+p { spawn-sh "~/.local/bin/kipr paste"; }
 
+
+
     // warpd
     // Mod+n { spawn-sh "warpd --normal"; }
     // Mod+m { spawn-sh "warpd --hint --oneshot --click 1"; }
     // Mod+b { spawn-sh "warpd --hint"; }
-    Shift+Backspace { spawn-sh "neru recursive_grid"; }
-    Ctrl+Shift+Backspace { spawn-sh "neru scroll"; }
+    // Shift+Backspace { spawn-sh "neru recursive_grid"; }
+    // Ctrl+Shift+Backspace { spawn-sh "neru scroll"; }
+    F24 { spawn "wl-kbptr" "-o" "modes=floating,click" "-o" "mode_floating.source=detect"; } // key sent from Vial
+    F23 { spawn "wl-kbptr" "-o" "modes=tile,split,click"; } // key sent from Vial
 
     // noctalia-shell
     Mod+Shift+E { spawn-sh "noctalia-shell ipc call sessionMenu toggle"; }

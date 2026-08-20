@@ -96,4 +96,4 @@ vim.lsp.config['robotcode'] = {
   }
 }
 
-vim.lsp.enable({ "lua_ls", "gopls", "pyright", "nil", "robotcode" })
+vim.lsp.enable({ "lua_ls", "gopls", "pyright", "nil", "robotcode", "marksman", "jsonls" })

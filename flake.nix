@@ -4,10 +4,6 @@
   outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./modules);
 
   inputs = {
-    affinity = {
-      url = "github:mrshmllow/affinity-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     flake-file.url = "github:vic/flake-file";
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
@@ -24,10 +20,6 @@
     import-tree.url = "github:vic/import-tree";
     neovim-nightly-overlay = {
       url = "github:nix-community/neovim-nightly-overlay";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    neru = {
-      url = "github:y3owk1n/neru";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixpkgs.url = "https://channels.nixos.org/nixpkgs-unstable/nixexprs.tar.xz";

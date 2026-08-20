@@ -1,4 +1,4 @@
-{inputs, lib, ...}: {
+{ lib, ...}: {
   flake.nixosModules.vicinae = { pkgs, ...}: {
 
     environment.systemPackages = with pkgs; [

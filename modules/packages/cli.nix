@@ -13,10 +13,9 @@
     ];
 
 
-    programs.neovim.enable = true;
+    # programs.neovim.enable = true;
     programs.yazi.enable = true;
     programs.nh.enable = true;
-    programs.starship.enable = true;
     programs.zoxide.enable = true;
 
     programs.git = {

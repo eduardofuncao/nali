@@ -18,6 +18,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     import-tree.url = "github:vic/import-tree";
+    jj-starship = {
+      url = "github:dmmulroy/jj-starship";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     nixpkgs.url = "https://channels.nixos.org/nixpkgs-unstable/nixexprs.tar.xz";
     noctalia.url = "github:noctalia-dev/noctalia";

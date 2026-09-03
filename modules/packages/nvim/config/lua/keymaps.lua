@@ -8,6 +8,11 @@ vim.keymap.set("n", "<C-j>", ":wincmd j<CR>", { silent = true, desc = "Move to b
 vim.keymap.set("n", "<C-k>", ":wincmd k<CR>", { silent = true, desc = "Move to above split" })
 vim.keymap.set("n", "<C-l>", ":wincmd l<CR>", { silent = true, desc = "Move to right split" })
 
+-- Clear multicursors (<C-l> is taken by split nav; same wipe as |CTRL-L-default|)
+vim.keymap.set("n", "<C-q>", function()
+  vim.api.nvim_buf_clear_namespace(0, vim.api.nvim_create_namespace("nvim.multicursor"), 0, -1)
+end, { silent = true, desc = "Clear multicursors" })
+
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
 vim.keymap.set("v", "<", "<gv", { desc = "Indent left and reselect" })

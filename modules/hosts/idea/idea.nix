@@ -23,6 +23,7 @@
       swap
       cli
       fish
+      starship
       niri
       noctalia
 

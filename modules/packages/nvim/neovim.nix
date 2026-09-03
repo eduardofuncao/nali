@@ -1,12 +1,15 @@
 {inputs, ...}: {
   flake-file.inputs.neovim-nightly-overlay = {
     url = "github:nix-community/neovim-nightly-overlay";
-    inputs.nixpkgs.follows = "nixpkgs";
+    # inputs.nixpkgs.follows = "nixpkgs";
   };
   flake.nixosModules.neovim = {pkgs, ...}: {
+    programs.neovim = {
+      enable = true;
+      package = inputs.neovim-nightly-overlay.packages.${pkgs.stdenv.hostPlatform.system}.default;
+    };
+
     environment.systemPackages = [
-      inputs.neovim-nightly-overlay.packages.${pkgs.stdenv.hostPlatform.system}.default
-      # pkgs.neovim
       pkgs.tree-sitter
     ];
 

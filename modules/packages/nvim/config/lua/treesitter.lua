@@ -19,13 +19,14 @@ require("nvim-treesitter").install({
   "markdown",
   "nix",
   "robot",
+  "java",
 })
 
 vim.api.nvim_create_autocmd("FileType", {
   pattern = {
     "c", "lua", "vim", "vimdoc", "query",
     "python", "go", "javascript", "html", "css",
-    "json", "yaml", "nix", "robot",
+    "json", "yaml", "nix", "robot", "java",
   },
   callback = function()
     vim.treesitter.start()

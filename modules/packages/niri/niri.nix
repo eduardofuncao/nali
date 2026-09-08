@@ -6,7 +6,7 @@
       xdg-desktop-portal-gtk xdg-desktop-portal-gnome
       xwayland-satellite
 
-      grim slurp swappy
+      grim slurp swappy wayscriber
       wl-kbptr
       wf-recorder
       brightnessctl

@@ -1,5 +1,5 @@
 -- lsp
-vim.lsp.enable({ "basedpyrigth", "bashls", "gopls", "jsonls", "lua_ls", "nil_ls", "ruff", "tsc", "yamlls", "sqls" })
+vim.lsp.enable({ "basedpyrigth", "ruff", "bashls", "gopls", "jsonls", "lua_ls", "nil_ls", "tsc", "yamlls", "sqls" })
 
 vim.diagnostic.config({ virtual_text = true })
 

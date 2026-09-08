@@ -15,7 +15,7 @@
       audio graphics kanata
       udev
       greetd
-      docker
+      podman #docker
       vicinae
 
       # packages

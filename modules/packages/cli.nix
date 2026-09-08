@@ -10,6 +10,7 @@
       jujutsu
       nchat
       websocat
+      bitwarden-cli
     ];
 
 

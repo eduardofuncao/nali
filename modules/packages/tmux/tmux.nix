@@ -7,6 +7,10 @@
       baseIndex = 1;
     };
 
+    environment.systemPackages = with pkgs; [
+      tmux-sessionizer
+    ];
+
     hjem.users.eduardo = {
       files = {
         ".config/tmux/tmux.conf".source = ./tmux.conf;

@@ -43,11 +43,45 @@ return {
       analysis = {
         autoSearchPaths = true,
         diagnosticMode = 'openFilesOnly',
-        -- https://docs.basedpyright.com/latest/configuration/language-server-settings/
-        -- Explicitly setting `basedpyright.analysis.useLibraryCodeForTypes` is **discouraged** by the official docs.
-        -- Because it will override per-project configurations like `pyproject.toml`.
-        -- If left unset, its default value is `true`, and it can be correctly overridden by project config files.
+        -- VSCode (Pylance) defaults to minimal checking ("off", opt-in "basic").
+        -- basedpyright defaults to "recommended" (= everything as warning), which is
+        -- why you see stub/unknown-type noise. "basic" ≈ VSCode with type checking on.
+        typeCheckingMode = 'basic',
+        -- Fall back to library source when no stubs exist; kills most
+        -- "stub not found" noise without hiding real errors.
+        useLibraryCodeForTypes = true,
+        diagnosticSeverityOverrides = {
+          -- "stub file not found for ..." (reportMissingTypeStubs)
+          reportMissingTypeStubs = 'none',
+          -- "type of X is unknown" noise from untyped 3rd-party libs
+          reportUnknownParameterType = 'none',
+          reportUnknownArgumentType = 'none',
+          reportUnknownLambdaType = 'none',
+          reportUnknownVariableType = 'none',
+          reportUnknownMemberType = 'none',
+          -- basedpyright-only Any rules (not part of pyright basic/standard)
+          reportAny = 'none',
+          reportExplicitAny = 'none',
+          -- missing/untyped-annotation noise (VSCode basic doesn't nag these)
+          reportMissingParameterType = 'none',
+          reportUntypedFunctionDecorator = 'none',
+          reportUntypedClassDecorator = 'none',
+          reportUntypedBaseClass = 'none',
+          reportUntypedNamedTuple = 'none',
+          -- basedpyright-only strictness not present in VSCode defaults
+          reportPrivateLocalImportUsage = 'none',
+          reportImplicitRelativeImport = 'none',
+          reportInvalidCast = 'none',
+          reportUnsafeMultipleInheritance = 'none',
+          reportUnusedParameter = 'none',
+          reportIgnoreCommentWithoutRule = 'none',
+        },
+        -- Default is true upstream; set explicitly so untyped 3rd-party
+        -- libs fall back to source instead of "stub not found" errors.
+        -- Per-project pyproject.toml / pyrightconfig.json still wins when present.
       },
+      -- ruff handles organize-imports; avoid two providers fighting.
+      disableOrganizeImports = true,
       disableTaggedHints = true,
     },
   },

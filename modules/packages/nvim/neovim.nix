@@ -18,15 +18,9 @@
         ".config/nvim/init.lua".source = ./config/init.lua;
 
         ".config/nvim/lua/options.lua".source = ./config/lua/options.lua;
-        ".config/nvim/lua/keymaps.lua".source = ./config/lua/keymaps.lua;
-        ".config/nvim/lua/lsp-config.lua".source = ./config/lua/lsp-config.lua;
-        ".config/nvim/lua/mini.lua".source = ./config/lua/mini.lua;
-        ".config/nvim/lua/completion.lua".source = ./config/lua/completion.lua;
-        ".config/nvim/lua/colorscheme.lua".source = ./config/lua/colorscheme.lua;
-        ".config/nvim/lua/spotlight.lua".source = ./config/lua/spotlight.lua;
-        ".config/nvim/lua/api.lua".source = ./config/lua/api.lua;
-        ".config/nvim/lua/sql.lua".source = ./config/lua/sql.lua;
+        ".config/nvim/lua/keymaps.lua".source = ./config/lua/keymaps.lua;".config/nvim/lua/lsp-config.lua".source = ./config/lua/lsp-config.lua; ".config/nvim/lua/mini.lua".source = ./config/lua/mini.lua; ".config/nvim/lua/completion.lua".source = ./config/lua/completion.lua; ".config/nvim/lua/colorscheme.lua".source = ./config/lua/colorscheme.lua; ".config/nvim/lua/spotlight.lua".source = ./config/lua/spotlight.lua; ".config/nvim/lua/api.lua".source = ./config/lua/api.lua;".config/nvim/lua/sql.lua".source = ./config/lua/sql.lua;
         ".config/nvim/lua/git.lua".source = ./config/lua/git.lua;
+        ".config/nvim/lua/jdtls_setup.lua".source = ./config/lua/jdtls_setup.lua;
         ".config/nvim/lua/treesitter.lua".source = ./config/lua/treesitter.lua;
 
         ".config/nvim/lsp/basedpyrigth.lua".source = ./config/lsp/basedpyrigth.lua;

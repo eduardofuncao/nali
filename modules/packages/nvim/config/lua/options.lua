@@ -29,3 +29,5 @@ vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 
 vim.o.splitright = true
 vim.o.splitbelow = true
+
+require('vim._core.ui2').enable()

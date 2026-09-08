@@ -10,6 +10,7 @@
         ".config/fish/functions/doix.fish".source = ./functions/doix.fish;
         ".config/fish/functions/emulator.fish".source = ./functions/emulator.fish;
         ".config/fish/functions/task.fish".source = ./functions/task.fish;
+        ".config/fish/functions/bwunlock.fish".source = ./functions/bwunlock.fish;
       };
     };
 

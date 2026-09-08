@@ -1,9 +1,9 @@
-vim.pack.add({ 'https://github.com/nvim-mini/mini.nvim' })
+vim.pack.add({'https://github.com/nvim-mini/mini.nvim'})
 
 
 require("mini.surround").setup()
 require("mini.ai").setup()
-require("mini.splitjoin").setup()
+require("mini.splitjoin").setup({ mappings = {toggle = 'gj'} })
 require("mini.jump").setup()
 
 require("mini.pick").setup()

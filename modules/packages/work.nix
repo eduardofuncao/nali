@@ -18,7 +18,6 @@
       android-tools
       teams-for-linux
       putty
-      steam-run
       bruno
       chromium
       firefox

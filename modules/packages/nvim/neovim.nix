@@ -11,11 +11,13 @@
 
     environment.systemPackages = [
       pkgs.tree-sitter
+      pkgs.secretspec
     ];
 
     hjem.users.eduardo = {
       files = {
         ".config/nvim/init.lua".source = ./config/init.lua;
+        ".config/nvim/secretspec.toml".source = ./config/secretspec.toml;
 
         ".config/nvim/lua/options.lua".source = ./config/lua/options.lua;
         ".config/nvim/lua/keymaps.lua".source = ./config/lua/keymaps.lua;".config/nvim/lua/lsp-config.lua".source = ./config/lua/lsp-config.lua; ".config/nvim/lua/mini.lua".source = ./config/lua/mini.lua; ".config/nvim/lua/completion.lua".source = ./config/lua/completion.lua; ".config/nvim/lua/colorscheme.lua".source = ./config/lua/colorscheme.lua; ".config/nvim/lua/spotlight.lua".source = ./config/lua/spotlight.lua; ".config/nvim/lua/api.lua".source = ./config/lua/api.lua;".config/nvim/lua/sql.lua".source = ./config/lua/sql.lua;

@@ -6,7 +6,7 @@
       zip unzip bat dig tldr fastfetch ncdu
       bc
       # qemu
-      kulala-core
+      steam-run
       jujutsu
       nchat
       websocat

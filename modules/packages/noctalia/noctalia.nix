@@ -3,7 +3,7 @@
   flake-file.inputs ={
     noctalia = {
       url = "github:noctalia-dev/noctalia";
-      # inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
   flake.nixosModules.noctalia = {pkgs, lib, ...}: {
@@ -19,10 +19,10 @@
 
     hjem.users.eduardo = {
       files = {
-        ".config/noctalia-shell/config.toml".source = ./noctalia.toml;
+        ".config/noctalia/config.toml".source = ./config.toml;
+        ".config/wallpapers".source = ./wallpapers;
       };
     };
 
   };
 }
-

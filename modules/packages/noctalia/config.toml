@@ -1,0 +1,219 @@
+[accessibility]
+ui_scale = 0.90000000000000002
+
+[bar.default]
+background_opacity = 0.0
+center = [ "cat_2", "workspaces", "media", "audio_visualizer" ]
+end = [ "ram", "network", "volume", "notes", "notifications", "battery", "spacer_2", "date", "clock" ]
+margin_edge = 0
+margin_ends = 10
+padding = 10
+radius = 20
+shadow = false
+start = [ "control-center" ]
+thickness = 24
+widget_spacing = 4
+
+[desktop_widgets]
+enabled = false
+schema_version = 2
+widget_order = []
+
+    [desktop_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [desktop_widgets.widget]
+
+[dock]
+auto_hide = true
+enabled = true
+icon_size = 32
+reserve_space = false
+
+[idle]
+behavior_order = [ "lock", "screen-off", "lock-and-suspend" ]
+pre_action_fade_seconds = 10
+
+    [idle.behavior.lock]
+    action = "lock"
+    enabled = true
+    timeout = 600.0
+
+    [idle.behavior.lock-and-suspend]
+    action = "lock_and_suspend"
+    enabled = false
+    timeout = 3600.0
+
+    [idle.behavior.screen-off]
+    action = "screen_off"
+    enabled = true
+    timeout = 660.0
+
+[location]
+address = "São Paulo"
+
+[lockscreen_widgets]
+enabled = false
+schema_version = 2
+widget_order = [ "lockscreen-login-box@HDMI-A-1", "lockscreen-login-box@eDP-1" ]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1"]
+    box_height = 196.0
+    box_width = 720.0
+    cx = 960.0
+    cy = 961.0
+    output = "HDMI-A-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
+    box_height = 196.0
+    box_width = 720.0
+    cx = 683.0
+    cy = 649.0
+    output = "eDP-1"
+    placement_height = 768.0
+    placement_width = 1366.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+[nightlight]
+enabled = true
+
+[plugins]
+enabled = [ "dotnetrob/cat", "avivbintangaringga/nix-monitor", "noctalia/notes", "noctalia/timer" ]
+
+[shell.panel]
+borders = false
+floating_offset = 0
+open_near_click_control_center = true
+session_placement = "floating"
+shadow = false
+transparency_mode = "glass"
+
+[theme]
+builtin = "Kanagawa"
+community_palette = "ADW"
+mode = "auto"
+source = "wallpaper"
+wallpaper_scheme = "m3-content"
+
+    [theme.templates]
+    enable_builtin_templates = false
+
+[wallpaper]
+directory = "~/.config/wallpapers"
+
+    [wallpaper.default]
+    path = "/home/eduardo/.config/wallpapers/bg.jpg"
+
+    [wallpaper.last]
+    path = "/home/eduardo/.config/wallpapers/bg.jpg"
+
+    [wallpaper.monitors.HDMI-A-1]
+    path = "/home/eduardo/.config/wallpapers/blackhole.png"
+
+    [wallpaper.monitors.eDP-1]
+    path = "/home/eduardo/.config/wallpapers/bg.jpg"
+
+    [[wallpaper.favorite]]
+    palette_source = "wallpaper"
+    path = "/home/eduardo/.config/wallpapers/bg.jpg"
+    theme_mode = "auto"
+    wallpaper_scheme = "m3-content"
+
+[widget.audio_visualizer]
+mirrored = false
+show_when_idle = true
+width = 28.0
+
+[widget.battery]
+hide_when_full = true
+show_label = false
+
+[widget.brightness]
+show_label = false
+
+[widget.cat_2]
+type = "dotnetrob/cat:cat"
+
+[widget.clock]
+scale = 0.84999999999999998
+
+[widget.control-center]
+glyph = "snowflake"
+
+[widget.custom_button_2]
+type = "custom_button"
+
+[widget.date]
+scale = 0.84999999999999998
+
+[widget.media]
+hide_when_no_media = true
+
+[widget.network]
+show_label = false
+
+[widget.notes]
+type = "noctalia/notes:notes"
+
+[widget.ram]
+show_value = false
+
+[widget.spacer_2]
+length = 10
+type = "spacer"
+
+[widget.volume]
+show_label = false
+
+[widget.weather]
+show_condition = false
+
+[widget.workspaces]
+active_pill_size = 2.0
+hide_when_empty = true
+pill_scale = 0.90000000000000002
+show_labels = false

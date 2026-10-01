@@ -436,7 +436,7 @@ binds {
 
     XF86AudioPlay { spawn-sh "noctalia msg media toggle"; }
     XF86AudioNext { spawn-sh "noctalia msg media next"; }
-    XF86AudioPrev { spawn-sh "noctalia mgs media previous"; }
+    XF86AudioPrev { spawn-sh "noctalia msg media previous"; }
 
     // Example brightness key mappings for brightnessctl.
     // You can use regular spawn with multiple arguments too (to avoid going through "sh"),
@@ -461,12 +461,10 @@ binds {
     F24 { spawn "wl-kbptr" "-o" "modes=floating,click" "-o" "mode_floating.source=detect"; } // key sent from Vial
     F23 { spawn "wl-kbptr" "-o" "modes=tile,split,click"; } // key sent from Vial
 
-    // noctalia-shell
-    Mod+Shift+E { spawn-sh "noctalia-shell ipc call sessionMenu toggle"; }
+    // noctalia
+    Mod+Shift+E { spawn-sh "noctalia msg panel-toggle session"; }
     // Mod+E { spawn-sh "noctalia msg panel-toggle control-center"; }
     Mod+Semicolon { spawn-sh "noctalia msg settings-toggle"; }
-    // Mod+Shift+0 { spawn-sh "noctalia-shell ipc call plugin:show-keys toggle"; }
-    // Mod+Z { spawn-sh "noctalia-shell ipc call plugin:notes-scratchpad togglePanel"; }
 
     // Open/close the Overview: a zoomed-out view of workspaces and windows.
     // You can also move the mouse into the top-left hot corner,

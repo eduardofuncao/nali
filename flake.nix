@@ -25,7 +25,10 @@
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     nixpkgs.url = "https://channels.nixos.org/nixpkgs-unstable/nixexprs.tar.zst";
     nixpkgs-opencode.url = "github:NixOS/nixpkgs/590d72952b052366ecf4060c8bf711d7f2b0d249";
-    noctalia.url = "github:noctalia-dev/noctalia";
+    noctalia = {
+      url = "github:noctalia-dev/noctalia";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     squix = {
       url = "github:eduardofuncao/squix";
       inputs.nixpkgs.follows = "nixpkgs";

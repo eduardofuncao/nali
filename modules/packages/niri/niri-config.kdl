@@ -20,7 +20,7 @@ input {
             // from org.freedesktop.locale1. You can control these using
             // localectl set-x11-keymap.
         }
-        repeat-delay 200
+        repeat-delay 250
         repeat-rate 35
         // Enable numlock on startup, omitting this setting disables it.
         numlock
@@ -269,6 +269,29 @@ layout {
     }
 }
 
+blur {
+    on
+    // offset (renamed from "radius" in 26.04). higher = stronger blur.
+    offset 8.0
+}
+
+window-rule {
+    match app-id="^kitty$"
+    background-effect {
+        blur true
+    }
+}
+
+// Zen transparency: niri's focus-border background would occlude it.
+window-rule {
+    match app-id="^zen$"
+    draw-border-with-background false
+    background-effect {
+        blur true
+        saturation 0.5
+    }
+}
+
 // Add lines like this to spawn processes at startup.
 // Note that running niri as a session supports xdg-desktop-autostart,
 // which may be more convenient to use.
@@ -277,7 +300,9 @@ layout {
 // This line starts waybar, a commonly used bar for Wayland compositors.
 // spawn-at-startup "waybar"
 
-spawn-at-startup "noctalia-shell"
+spawn-at-startup "noctalia"
+spawn-sh-at-startup "wayscriber --daemon"
+
 debug {
   // Allows notification actions and window activation from Noctalia.
   honor-xdg-activation-with-invalid-serial
@@ -392,6 +417,7 @@ binds {
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+Return hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
+    Mod+Shift+Return hotkey-overlay-title="Open Browser: Zen" { spawn "zen"; }
     Mod+Space hotkey-overlay-title="Run an Application: vicinae" { spawn-sh "vicinae open"; }
     // Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
 
@@ -408,9 +434,9 @@ binds {
     XF86AudioMute        allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
     XF86AudioMicMute     allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
 
-    XF86AudioPlay { spawn-sh "noctalia-shell ipc call media playPause"; }
-    XF86AudioNext { spawn-sh "noctalia-shell ipc call media next"; }
-    XF86AudioPrev { spawn-sh "noctalia-shell ipc call media previous"; }
+    XF86AudioPlay { spawn-sh "noctalia msg media toggle"; }
+    XF86AudioNext { spawn-sh "noctalia msg media next"; }
+    XF86AudioPrev { spawn-sh "noctalia msg media previous"; }
 
     // Example brightness key mappings for brightnessctl.
     // You can use regular spawn with multiple arguments too (to avoid going through "sh"),
@@ -422,17 +448,23 @@ binds {
     Mod+y { spawn-sh "~/.local/bin/kipr yank"; }
     Mod+p { spawn-sh "~/.local/bin/kipr paste"; }
 
-    // warpd
-    Mod+n { spawn-sh "warpd --normal"; }
-    Mod+m { spawn-sh "warpd --hint --oneshot --click 1"; }
-    Mod+b { spawn-sh "warpd --hint"; }
+    // wayscriber
+    Mod+D { spawn-sh "wayscriber --daemon-toggle"; }
+    // Mod+D { spawn-sh "wayscriber --clear-session && wayscriber --daemon-toggle"; }
 
-    // noctalia-shell
-    Mod+Shift+E { spawn-sh "noctalia-shell ipc call sessionMenu toggle"; }
-    Mod+E { spawn-sh "noctalia-shell ipc call controlCenter toggle"; }
-    Mod+Semicolon { spawn-sh "noctalia-shell ipc call settings toggle"; }
-    Mod+Shift+0 { spawn-sh "noctalia-shell ipc call plugin:show-keys toggle"; }
-    Mod+Z { spawn-sh "noctalia-shell ipc call plugin:notes-scratchpad togglePanel"; }
+    // warpd
+    // Mod+n { spawn-sh "warpd --normal"; }
+    // Mod+m { spawn-sh "warpd --hint --oneshot --click 1"; }
+    // Mod+b { spawn-sh "warpd --hint"; }
+    // Shift+Backspace { spawn-sh "neru recursive_grid"; }
+    // Ctrl+Shift+Backspace { spawn-sh "neru scroll"; }
+    F24 { spawn "wl-kbptr" "-o" "modes=floating,click" "-o" "mode_floating.source=detect"; } // key sent from Vial
+    F23 { spawn "wl-kbptr" "-o" "modes=tile,split,click"; } // key sent from Vial
+
+    // noctalia
+    Mod+Shift+E { spawn-sh "noctalia msg panel-toggle session"; }
+    // Mod+E { spawn-sh "noctalia msg panel-toggle control-center"; }
+    Mod+Semicolon { spawn-sh "noctalia msg settings-toggle"; }
 
     // Open/close the Overview: a zoomed-out view of workspaces and windows.
     // You can also move the mouse into the top-left hot corner,

@@ -1,11 +1,9 @@
-{ self, ... }: {
-  flake.nixosModules.editing = { pkgs, ... }: {
-    imports = with self.nixosModules; [
-      affinity
-    ];
+{ ... }: {
+  flake.nixosModules.editing = { pkgs, config, ... }: {
 
     environment.systemPackages = with pkgs; [
-      ffmpeg obs-studio
+      ffmpeg chafa obs-studio
+      # inkscape
     ];
 
   };

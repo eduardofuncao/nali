@@ -21,6 +21,7 @@
       # packages
       core
       cli
+      starship
       niri
       noctalia
 

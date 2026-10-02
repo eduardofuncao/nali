@@ -2,7 +2,21 @@
   flake.nixosModules.viewers = { pkgs, ... }: {
 
     environment.systemPackages = with pkgs; [
-      mpv zathura imv
+      zathura
+      imv
+      aerc
+
+      super-productivity
+      yt-dlp
+      spotify-player
+
+      (pkgs.mpv.override {
+        scripts = with pkgs.mpvScripts; [
+          modernz
+          cut
+          occivink.crop
+        ];
+      })
     ];
 
   };

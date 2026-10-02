@@ -1,4 +1,4 @@
-vim.keymap.set("n", "<leader>hh", "<cmd>Neogit<cr>", {desc = "Show Neogit UI"})
+vim.pack.add({ "https://github.com/lewis6991/gitsigns.nvim"  })
 
 require("gitsigns").setup({
   signs = {

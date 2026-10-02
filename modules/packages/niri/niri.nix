@@ -2,11 +2,12 @@
   flake.nixosModules.niri = { pkgs, ... }: {
 
     environment.systemPackages = with pkgs; [
-      wl-clipboard wtype
+      wl-clipboard
       xdg-desktop-portal-gtk xdg-desktop-portal-gnome
       xwayland-satellite
 
-      grim slurp swappy
+      grim slurp swappy wayscriber
+      wl-kbptr
       wf-recorder
       brightnessctl
 
@@ -35,6 +36,7 @@
     hjem.users.eduardo = {
       files = {
         ".config/niri/config.kdl".source = ./niri-config.kdl;
+        ".config/wl-kbptr/config".source = ./wl-kbptr-config;
       };
     };
 

@@ -2,12 +2,7 @@
 
   flake-file.inputs ={
     noctalia = {
-      url = "github:noctalia-dev/noctalia-shell";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.noctalia-qs.follows = "noctalia-qs";
-    };
-    noctalia-qs = {
-      url = "github:noctalia-dev/noctalia-qs";
+      url = "github:noctalia-dev/noctalia";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -24,10 +19,10 @@
 
     hjem.users.eduardo = {
       files = {
-        ".config/noctalia-shell/config.json".source = ./noctalia.json;
+        ".config/noctalia/config.toml".source = ./config.toml;
+        ".config/wallpapers".source = ./wallpapers;
       };
     };
 
   };
 }
-

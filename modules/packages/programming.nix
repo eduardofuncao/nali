@@ -23,7 +23,7 @@
       bash-language-server
       sqls
       oracle-instantclient
-      claude-code fabric-ai antigravity-cli
+      claude-code fabric-ai antigravity-cli kiro-cli
       inputs.nixpkgs-opencode.legacyPackages.${pkgs.stdenv.hostPlatform.system}.opencode
       distrobox
     ];

@@ -30,6 +30,34 @@ If you need to create a configuration for another host, you can add it in `hosts
 ```
 After adding this, flake-file update the flake.nix file using `nix run .#write-flake`
 
+## Fresh install on a new machine
+
+```bash
+git clone https://github.com/eduardofuncao/nali
+cd nali
+```
+
+Create a host dir (in `./modules/hosts/`) and move your generated `hardware.nix` there (assuming
+`hardware.nix` already exists from `nixos-generate-config`):
+
+```bash
+mkdir modules/hosts/<newhost>
+mv /path/to/hardware.nix modules/hosts/<newhost>/hardware.nix
+```
+
+Add `modules/hosts/<newhost>/<newhost>.nix` following the example from `desktop.nix`:
+declare `flake.nixosConfigurations.<newhost>` and `flake.nixosModules.<newhost>`
+importing the modules you want. `hardware.nix` needs to be modified as a module, which will be merged
+into the same `nixosModules.<newhost>` module, so no explicit import needed.
+
+Then regenerate the flake, update inputs, and rebuild:
+
+```bash
+nix run .#write-flake
+nix flake update
+sudo nixos-rebuild switch --flake .#<newhost>
+```
+
 ## Sourcing config files without home-manager
 To source config files from other programs using nix, we use hjem. For example, this is the tmux module, where we source a tmux.conf file that is located in the same directory as tmux.nix to be available at `~/.config/tmux/tmux.conf` after rebuilding the system:
 ```nix
